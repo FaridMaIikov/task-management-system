@@ -1,0 +1,62 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2311202301
+      author: Farid
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: first_name
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: last_name
+                  type: VARCHAR(50)
+              - column:
+                  name: phone
+                  type: VARCHAR(50)
+              - column:
+                  constraints:
+                    unique: true
+                    nullable: false
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    unique: true
+                    nullable: false
+                  name: username
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: password
+                  type: VARCHAR(255)
+              - column:
+                  defaultValueBoolean: false
+                  name: is_active
+                  type: BOOLEAN
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueDate: "CURRENT_TIMESTAMP"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+
+
+
+

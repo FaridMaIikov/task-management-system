@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2311202304
+      author: Farid
+      changes:
+        - createTable:
+            tableName: verifiers
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: email
+                  type: VARCHAR
+                  constraints:
+                    nullable: false
+              - column:
+                  name: code
+                  type: VARCHAR
+                  constraints:
+                    nullable: false

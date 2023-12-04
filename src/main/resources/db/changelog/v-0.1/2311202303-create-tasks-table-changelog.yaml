@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2311202303
+      author: Farid
+      changes:
+        - createTable:
+            tableName: tasks
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: category_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: category_id
+                    referencedTableName: categories
+                    referencedColumnNames: id
+              - column:
+                  name: name
+                  type: VARCHAR()
+              - column:
+                  name: created_by
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: created_by
+                    referencedTableName: users
+                    referencedColumnNames: id
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+                  defaultValueDate: "CURRENT_TIMESTAMP"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: start_time
+                  type: TIMESTAMP
+              - column:
+                  name: deadline
+                  type: DATE
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+              - column:
+                  name: modified_by
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: modified_by
+                    referencedTableName: users
+                    referencedColumnNames: id
+              - column:
+                  name: status
+                  type: VARCHAR(20)
+                  defaultValue: "TODO"
+              - column:
+                  name: description
+                  type: text

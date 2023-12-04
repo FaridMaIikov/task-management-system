@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/task_management_system
+    username: postgres
+    password: 1903
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: false
+    open-in-view: true
+
+  sql:
+    init:
+      mode: never
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/changelog-master.yaml
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: malikow.farid@gmail.com
+    password: fslj bfha gulk puud
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+security:
+  jwt:
+    public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArUImMolAiW1S4qzJVYfiE+3zfkm+xHhF3Ixvfp2uOM8suPiv68MzsX3Gr0WmUjkW+QzdS1Fm3ANkyN7fE93lamzZRcR+ZptZcWJARuSroa4qzqKttSksOOFIMntBcB2tFMEmiVJzUD6l490NK3GgFYDK3VwkzHBCAgiwRIFdv5knldIYcCvmMx88/7LoJZrHiyLoSU4Tm001HwbEQI3WfQwVq5x+jOatOKMW4fiyvBWoRc+HVYZEo5X+E6L/yUIehJBxG8Rbjn7FEyfuSJBlfDJTOPpCs3IB/aE9t8gRcXrkZ0uUzIi3YuzLOgiR6NXLux51CflEvVrjGShRHfll1wIDAQAB
+    private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCtQiYyiUCJbVLirMlVh+IT7fN+Sb7EeEXcjG9+na44zyy4+K/rwzOxfcavRaZSORb5DN1LUWbcA2TI3t8T3eVqbNlFxH5mm1lxYkBG5KuhrirOoq21KSw44Ugye0FwHa0UwSaJUnNQPqXj3Q0rcaAVgMrdXCTMcEICCLBEgV2/mSeV0hhwK+YzHzz/suglmseLIuhJThObTTUfBsRAjdZ9DBWrnH6M5q04oxbh+LK8FahFz4dVhkSjlf4Tov/JQh6EkHEbxFuOfsUTJ+5IkGV8MlM4+kKzcgH9oT23yBFxeuRnS5TMiLdi7Ms6CJHo1cu7HnUJ+US9WuMZKFEd+WXXAgMBAAECggEAKkGn70tqYho3zPE3aZTqntG6QWLbFDABWfkmeEsc4t4kmjiNL4M8aF20x6rFFei2oadxkZ0Y6TAqtJMm9UF5YquJkmqKKZxaBD1iT+gVtCk2Z49lrnmMP5MyeJ13KFEUlatGKtfhKAEflKOlQqND1/rBf5upnfMDJlvYId0rcD8Tb7QIcYWHsTeyvwNKVhcn12xx59DuBzJ9xq26zxp+vX4BWq36i0C1F2IiViX2P//V60g2o5e8BAsqqF7i/fN6BCq64PyhK1fonJirB+sByVA1rGpVvc9DVRg4XxLEhwPB9o979TbUMt59thMLIsO0rpFmGUET7iM1pZR9ZfTdAQKBgQDfYSfSWqtbTWUmo/3f02F8aTCgR20z5K0TQ+S3m9gBlglFbumcBRSwxY0NVB3EJj4cZAgazhHUNhTu+BoGOXboqkVkoB2Z891W4wmGTo2fUmBtFQQPHEz02I1FGak5SOf7h1OEMJQfSjTXhssQELQgqxHwClQ2pr4zznTohS2E/wKBgQDGj0Kdonm7el2D7a0x8NKRXpxJOGpjz7r1og9RoIZ1cndtshMnUM0cm7cRG/HL5S8XXRFzg+SviM77UbVhpwJvIbZvd25YaUiz0UiQ9900imWE0TDZg5bPktOxAV6YMaqZA5DA1pfvUxoWu/DeAOUSjcX5bLHptmbPcHbiaFPnKQKBgHPP8U90RsdNdxXzjBpRg4d3GgjfP1TaSIlmd9xh5jncSe4/tMp5L+L+aUTxyYT6ttUNX85V7JRzfaLv6r4zaNzz+opTIUXCU41KpJOHgpGJqgikDriu2Y9P/t5GkZ/rlqqn3Lr6XLFkTcU4U2t+3YTabLBhCoxTIuXFMoOjGJiNAoGAfSMWcbBPFfeVbirhh2Ll4hYFWyQB8OufQWUkUGZhty0v1WNwLMwAqLH+WvsIlV7YIdpWwD10Z6hKAhvJu0R9BTry9icH1RJtbl5MZIjB0XYTavRH3B3RcvpvDdP2IObURGD53n6f/IWcII3LzK41sE7HYV2+drOs8blIQ4JKtpkCgYEAisHrT304PRa+PO6i6NtIQ5h2kYs+L7J9EZqq7IKPuGaDlDh/Rfscac6NXjl7mlemOthG20aRK8fc7aBA+UMWMMv2g6UApZttTkBN1nQYOlaLOOuEQLtJ31lAx2zl4AtnT318hZi48ymkmPq4Xwa2O3e8GY9BtgSHuF5+uudUZtk=
+    access-token-validity-time: 1800000
+    refresh-token-validity-time: 86400000
